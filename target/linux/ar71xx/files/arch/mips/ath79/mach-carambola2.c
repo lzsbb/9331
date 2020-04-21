@@ -16,13 +16,13 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <asm/delay.h>
 #include <linux/types.h>
 #include <sound/core.h>
 #include <sound/soc.h>
 #include <linux/module.h>
 
 /* Driver include */
+
 #include <asm/mach-ath79/ar71xx_regs.h>
 #include <asm/mach-ath79/ath79.h>
 #include "ath79-i2s.h"
@@ -34,15 +34,15 @@ static struct snd_soc_dai_link carambola_dai = {
 	.name = "Carambola2 audio",
 	.stream_name = "Carambola2 audio",
 	.cpu_dai_name = "ath79-i2s",
-	.codec_dai_name = "wm8727-hifi",
+	.codec_dai_name = "ak4430-hifi",
 	.platform_name = "ath79-pcm-audio",
-	.codec_name = "wm8727",
+	.codec_name = "ak4430-codec",
 	/* use ops to check startup state */
 };
 
 static struct snd_soc_card snd_soc_carambola = {
 	.name = "ATH Carambola2",
-	.long_name = "Carambola2 - ath79-pcm/ath79-i2s/wm8727",
+	.long_name = "Carambola2 - ath79-pcm/ath79-i2s/qca-ap123-ak4430",
 	.dai_link = &carambola_dai,
 	.num_links = 1,
 };
@@ -77,4 +77,3 @@ MODULE_AUTHOR("Qualcomm-Atheros Inc.");
 MODULE_AUTHOR("Mathieu Olivari <mathieu@qca.qualcomm.com>");
 MODULE_DESCRIPTION("QCA Audio Machine module");
 MODULE_LICENSE("Dual BSD/GPL");
-
