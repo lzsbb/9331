@@ -13,7 +13,7 @@ PKG_RELEASE:=1
 
 include $(INCLUDE_DIR)/package.mk
 
-define KernelPackage/ath79-i2s
+define KernelPackage/ath79-i2s 
 	SUBMENU:=i2s alsa modules
 	TITLE:=Atheros 933X I2S module
 	DEPENDS:=@AUDIO_SUPPORT +kmod-sound-soc-core +kmod-ath79-i2s-dev
@@ -21,11 +21,11 @@ define KernelPackage/ath79-i2s
 	KCONFIG:=
 endef
 
-define KernelPackage/ath79-i2s/description
+define KernelPackage/ath79-i2s/description 
 	Kernel module for atheros ar933x i2s support
 endef
 
-define KernelPackage/ath79-pcm
+define KernelPackage/ath79-pcm 
 	SUBMENU:=i2s alsa modules
 	TITLE:=Atheros 933X PCM module
 	DEPENDS:=@AUDIO_SUPPORT +kmod-sound-soc-core +kmod-ath79-i2s-dev +kmod-ath79-i2s
@@ -33,11 +33,11 @@ define KernelPackage/ath79-pcm
 	KCONFIG:=
 endef
 
-define KernelPackage/ath79-pcm/description
+define KernelPackage/ath79-pcm/description 
 	Kernel module for atheros ar933x pcm support
 endef
 
-define KernelPackage/ath79-i2s-dev
+define KernelPackage/ath79-i2s-dev 
 	SUBMENU:=i2s alsa modules
 	TITLE:=Atheros 933X I2S DEV module
 	DEPENDS:=@AUDIO_SUPPORT
@@ -45,23 +45,23 @@ define KernelPackage/ath79-i2s-dev
 	KCONFIG:=
 endef
 
-define KernelPackage/ath79-i2s/description
+define KernelPackage/ath79-i2s/description 
 	Kernel module for atheros ar933x i2s dev support
 endef
 
-define KernelPackage/ath79-qca-ap123-ak4430
+define KernelPackage/ath79-qca-ap123-ak4430 
 	SUBMENU:=i2s alsa modules
-	TITLE:=Atheros 933X qca-ap123-ak4430 codec
+	TITLE:=Atheros 933X qca-ap123-ak4430 codec 
 	DEPENDS:=@AUDIO_SUPPORT +kmod-ath79-i2s +kmod-ath79-pcm
 	FILES:=$(PKG_BUILD_DIR)/qca-ap123-ak4430.ko
 	KCONFIG:=
 endef
 
-define KernelPackage/ath79-qca-ap123-ak4430/description
+define KernelPackage/ath79-qca-ap123-ak4430/description 
 	Kernel module for atheros ar933x qca-ap123-ak4430 codec support
 endef
 
-define KernelPackage/ath79-carambola2
+define KernelPackage/ath79-carambola2 
 	SUBMENU:=i2s alsa modules
 	TITLE:=Atheros 933X carambola 2 clue code
 	DEPENDS:=@AUDIO_SUPPORT +kmod-ath79-i2s +kmod-ath79-pcm +kmod-ath79-qca-ap123-ak4430
@@ -69,7 +69,7 @@ define KernelPackage/ath79-carambola2
 	KCONFIG:=
 endef
 
-define KernelPackage/ath79-ath-carambola2/description
+define KernelPackage/ath79-ath-carambola2/description 
 	Kernel module for atheros ar933x ath-carambola2 clue code
 endef
 
